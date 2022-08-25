@@ -19,6 +19,12 @@ const LoginScreen = () => {
                 <button>Register new account</button>
                 </div>
             </div>
+            <section>
+            <div className="creator">@adam_duchna</div>
+            <div className="wave wave1"></div>
+            <div className="wave wave2"></div>
+            <div className="wave wave3"></div>
+            </section>
         </div>
     )
 }
