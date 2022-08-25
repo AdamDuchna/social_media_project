@@ -1,0 +1,62 @@
+.login-screen {
+  background: linear-gradient(60deg, rgb(44, 8, 46) 0%, rgb(37, 85, 182) 100%);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 100vh;
+}
+.login-screen .left-box {
+  width: 30vw;
+}
+.login-screen .left-box .label {
+  display: flex;
+  align-items: center;
+}
+.login-screen .left-box .label .logo {
+  width: 100px;
+}
+.login-screen .left-box .label .name {
+  height: 36px;
+}
+.login-screen .right-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  width: 400px;
+  height: 280px;
+}
+.login-screen .right-box .login {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.login-screen .right-box .login input, .login-screen .right-box .login button {
+  padding: 16px;
+  border-radius: 6px;
+}
+.login-screen .right-box .login button {
+  background-color: #3333cc;
+  border: none;
+  color: white;
+}
+.login-screen .right-box .login input {
+  padding-left: 16px;
+  border: 1px solid rgb(228, 228, 228);
+}
+.login-screen .right-box .login input:focus {
+  outline: 1px solid #3333cc;
+}
+.login-screen .right-box .login .line {
+  height: 1px;
+  background-color: rgb(228, 228, 228);
+}
+.login-screen .right-box .login button:nth-of-type(2) {
+  background-color: rgb(20, 208, 20);
+}/*# sourceMappingURL=LoginScreen.css.map */
