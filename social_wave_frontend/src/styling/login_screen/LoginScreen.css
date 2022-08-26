@@ -1,5 +1,5 @@
 .login-screen {
-  background: linear-gradient(60deg, rgb(44, 8, 46) 0%, rgb(24, 63, 143) 100%);
+  background: linear-gradient(60deg, rgb(44, 8, 46) 0%, #3333cc 100%);
   display: flex;
   justify-content: space-evenly;
   align-items: center;
