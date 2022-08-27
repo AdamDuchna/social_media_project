@@ -20,6 +20,7 @@
   height: 36px;
 }
 .login-screen .right-box {
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,37 +31,102 @@
   width: 400px;
   height: 280px;
 }
-.login-screen .right-box .login {
+.login-screen .right-box .login, .login-screen .right-box .register {
   width: 80%;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
 }
-.login-screen .right-box .login input, .login-screen .right-box .login button {
+.login-screen .right-box .login input, .login-screen .right-box .login button, .login-screen .right-box .register input, .login-screen .right-box .register button {
   padding: 16px;
   border-radius: 6px;
 }
-.login-screen .right-box .login button {
+.login-screen .right-box .login button, .login-screen .right-box .register button {
   background-color: #3333cc;
   border: none;
   color: white;
   font-style: oblique;
   font-weight: bolder;
 }
-.login-screen .right-box .login input {
+.login-screen .right-box .login input, .login-screen .right-box .register input {
   padding-left: 16px;
   border: 1px solid rgb(228, 228, 228);
 }
-.login-screen .right-box .login input:focus {
+.login-screen .right-box .login input:focus, .login-screen .right-box .register input:focus {
   outline: 1px solid #3333cc;
 }
-.login-screen .right-box .login .line {
+.login-screen .right-box .login .line, .login-screen .right-box .register .line {
   height: 1px;
   background-color: rgb(228, 228, 228);
 }
-.login-screen .right-box .login button:nth-of-type(2) {
+.login-screen .right-box .login button:nth-of-type(2), .login-screen .right-box .register button:nth-of-type(2) {
   background-color: rgb(20, 208, 20);
+}
+.login-screen .right-box .login .buttons-box, .login-screen .right-box .register .buttons-box {
+  display: flex;
+  justify-content: space-between;
+}
+.login-screen .right-box .login .buttons-box button, .login-screen .right-box .register .buttons-box button {
+  width: 48%;
+}
+.login-screen .right-box .register {
+  position: relative;
+  -webkit-animation: slideup 0.8s ease-in-out;
+          animation: slideup 0.8s ease-in-out;
+  height: 100%;
+}
+.login-screen .right-box .register input, .login-screen .right-box .register button {
+  padding: 14px;
+}
+@-webkit-keyframes slideup {
+  0% {
+    top: 100%;
+  }
+  70% {
+    top: -3%;
+  }
+  100% {
+    top: 0%;
+  }
+}
+@keyframes slideup {
+  0% {
+    top: 100%;
+  }
+  70% {
+    top: -3%;
+  }
+  100% {
+    top: 0%;
+  }
+}
+.login-screen .right-box .login {
+  position: relative;
+  -webkit-animation: slidedown 0.8s ease-in-out;
+          animation: slidedown 0.8s ease-in-out;
+}
+@-webkit-keyframes slidedown {
+  0% {
+    top: -100%;
+  }
+  70% {
+    top: 3%;
+  }
+  100% {
+    top: 0%;
+  }
+}
+@keyframes slidedown {
+  0% {
+    top: -100%;
+  }
+  70% {
+    top: 3%;
+  }
+  100% {
+    top: 0%;
+  }
 }
 .login-screen .wave {
   position: absolute;

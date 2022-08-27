@@ -11,8 +11,6 @@ exports.connect = () => {
     .connect(`mongodb://${dbConnData.host}:${dbConnData.port}/${dbConnData.database}`, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
-      useCreateIndex: true,
-      useFindAndModify: false,
     })
     .then(response => {
       console.log(`Connected to MongoDB. Database name: "${response.connections[0].name}"`)

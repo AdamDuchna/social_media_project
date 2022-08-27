@@ -2,22 +2,25 @@ import React, { useState } from "react";
 import '../../styling/login_screen/LoginScreen.css';
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import RegisterForm from "./RegisterForm";
 
 const LoginScreen = ({setToken}) => {
     const [username,setUsername] = useState()
     const [password,setPassword] = useState()
     const [error,setError] = useState()
+    const [isLogging,setIsLogging] = useState(true)
 
-    const loginUser = (credentials) => {
+    const loginUser = (values) => {
         axios
-        .post()
-        .then()
-        .catch((error)=>{setError(error)})
+        .post('http://localhost:5000/user/login',{...values})
+        .then(res=>{console.log(res)})
+        .catch(err=>{console.log(err)})
     }
 
     const handleLogin = () => {
-        console.log("LOGIN")
+        loginUser({ username: username, password: password})
     }
+    const handleChange=()=>{setIsLogging(!isLogging)}
 
     return (
         <div className="login-screen">
@@ -28,13 +31,17 @@ const LoginScreen = ({setToken}) => {
                 </div>
             </div>
             <div className="right-box">
+                { isLogging ? 
                 <div className="login">
                 <input type="text" placeholder="Username" onChange={e=>setUsername(e.target.value)} ></input>
-                <input type="password" placeholder="Password" onChange={e=>setPassword(e.target.value)}></input>
+                <input autoComplete="current-password" type="password" placeholder="Password" onChange={e=>setPassword(e.target.value)}></input>
                 <button onClick={handleLogin}>Log In</button>
                 <div className="line"></div>
-                <button>Register new account</button>
+                <button onClick={handleChange} className="register-button">Register new account</button>
                 </div>
+                :
+                    <RegisterForm handleChange={handleChange}/>
+                }
             </div>
             <section>
             <div className="creator">@adam_duchna</div>
