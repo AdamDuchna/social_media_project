@@ -19,9 +19,59 @@
 .login-screen .left-box .label .name {
   height: 36px;
 }
+.login-screen .right-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.login-screen .error {
+  z-index: 300;
+  align-self: center;
+  text-align: center;
+  position: relative;
+  background-color: rgb(245, 69, 69);
+  border-top-right-radius: 12px;
+  border-top-left-radius: 12px;
+  padding: 12px;
+  color: white;
+  font-weight: bolder;
+  width: 70%;
+  height: 30px;
+  top: 10px;
+  -webkit-animation: comeup 0.8s ease-in-out;
+          animation: comeup 0.8s ease-in-out;
+}
+@-webkit-keyframes comeup {
+  0% {
+    top: 80px;
+  }
+  70% {
+    top: 0px;
+  }
+  100% {
+    top: 10px;
+  }
+}
+@keyframes comeup {
+  0% {
+    top: 80px;
+  }
+  70% {
+    top: 0px;
+  }
+  100% {
+    top: 10px;
+  }
+}
+.login-screen .noerror {
+  height: 30px;
+  width: 70%;
+  padding: 12px;
+}
 .login-screen .right-box {
   overflow: hidden;
   display: flex;
+  position: relative;
+  z-index: 400;
   flex-direction: column;
   align-items: center;
   background-color: white;

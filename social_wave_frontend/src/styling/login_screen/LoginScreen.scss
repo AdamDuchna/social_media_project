@@ -14,9 +14,41 @@
             .name { height: 36px; }
         }
     }
+    .right-wrapper{
+        display:flex;
+        flex-direction: column;
+    }
+    .error{
+            z-index: 300;
+            align-self: center;
+            text-align: center;
+            position: relative;
+            background-color: rgb(245, 69, 69);
+            border-top-right-radius: 12px ;
+            border-top-left-radius: 12px;
+            padding:12px;
+            color:white;
+            font-weight: bolder;
+            width: 70%;
+            height: 30px;
+            top: 10px;
+            animation: comeup 0.8s ease-in-out;
+            @keyframes comeup {
+                0% { top: 80px; }
+                70%{ top: 0px; }
+                100%{ top: 10px;}
+            }
+        }
+    .noerror{
+        height: 30px;
+        width: 70%;
+        padding:12px;
+    }
     .right-box{
         overflow: hidden;
         display:flex;
+        position: relative;
+        z-index: 400;
         flex-direction: column;
         align-items: center;
         background-color: white;

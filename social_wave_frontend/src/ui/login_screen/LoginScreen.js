@@ -1,26 +1,14 @@
 import React, { useState } from "react";
 import '../../styling/login_screen/LoginScreen.css';
-import axios from "axios";
-import { useNavigate } from "react-router-dom";
 import RegisterForm from "./RegisterForm";
+import LoginForm from "./LoginForm";
 
-const LoginScreen = ({setToken}) => {
-    const [username,setUsername] = useState()
-    const [password,setPassword] = useState()
-    const [error,setError] = useState()
+const LoginScreen = ({setToken ,setUser}) => {
+    const [error,setError] = useState();
     const [isLogging,setIsLogging] = useState(true)
-
-    const loginUser = (values) => {
-        axios
-        .post('http://localhost:5000/user/login',{...values})
-        .then(res=>{console.log(res)})
-        .catch(err=>{console.log(err)})
-    }
-
-    const handleLogin = () => {
-        loginUser({ username: username, password: password})
-    }
-    const handleChange=()=>{setIsLogging(!isLogging)}
+    const handleChange=()=>{
+        setIsLogging(!isLogging)
+        setError()}
 
     return (
         <div className="login-screen">
@@ -30,18 +18,12 @@ const LoginScreen = ({setToken}) => {
                     <img className="name" src="/name.png" ></img>
                 </div>
             </div>
-            <div className="right-box">
-                { isLogging ? 
-                <div className="login">
-                <input type="text" placeholder="Username" onChange={e=>setUsername(e.target.value)} ></input>
-                <input autoComplete="current-password" type="password" placeholder="Password" onChange={e=>setPassword(e.target.value)}></input>
-                <button onClick={handleLogin}>Log In</button>
-                <div className="line"></div>
-                <button onClick={handleChange} className="register-button">Register new account</button>
+            <div className="right-wrapper">
+                { error ? <div className="error">{error}</div> :  <div className="noerror"></div> } 
+                <div className="right-box">
+                    { isLogging ? <LoginForm handleChange={handleChange} setUser={setUser} setError={setError} /> 
+                    : <RegisterForm handleChange={handleChange} setError={setError}/> }
                 </div>
-                :
-                    <RegisterForm handleChange={handleChange}/>
-                }
             </div>
             <section>
             <div className="creator">@adam_duchna</div>
