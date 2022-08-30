@@ -1,22 +1,16 @@
 import axios from "axios";
 import { Formik,Field,Form } from "formik";
-import { useNavigate } from "react-router-dom";
-import { useState } from "react";
-const LoginForm = ({handleChange,setUser,setError}) => {
-    const navigate = useNavigate();
-
+const LoginForm = ({handleChange,setUser,setError,loginSuccess}) => {
     const handleSuccesfulLogin = (res) => {
-        console.log(res)
         if(res.status === 200){
+            setError()
             setUser(res.data)
-            navigate("/mainpage")
+            loginSuccess()
         }
         else{ setError("Something went wrong...")}
     }
 
-    const handleUnsuccesfulLogin = (err) => {
-        setError(err.response.data)
-    }
+    const handleUnsuccesfulLogin = (err) => {setError(err.response.data)}
 
     const handleSubmit = (values) => {
         axios

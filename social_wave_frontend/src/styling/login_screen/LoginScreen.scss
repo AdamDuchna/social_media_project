@@ -116,7 +116,6 @@
             }
         }
     }
-
     .wave{
         position: absolute;
         bottom: 0px;
@@ -129,34 +128,74 @@
     }
     .creator{
         position: absolute;
+        z-index: 3000;
         bottom: 10px;
         left:10px;
         color:rgb(105, 105, 105);
         z-index: 1001;
     }
     section .wave.wave1{
-        z-index: 1000;
+        z-index: 2000;
         opacity: 1;
         animation-delay: 0s;
-        animation: flow 28s linear infinite;
+        animation: flow 16s linear infinite forwards;
     }
 
     section .wave.wave2{
-        z-index: 999;
+        z-index: 1999;
         opacity: 0.6;
         animation-delay: -5s;
-        animation: flow 16s linear infinite;
+        animation: flow 10s linear infinite forwards;
     }
 
     section .wave.wave3{
-        z-index: 998;
+        z-index: 1998;
         opacity: 0.3;
         animation-delay: -10s;
-        animation: flow 8s linear infinite;
+        animation: flow 6s linear infinite forwards;
     }
+    section .wave.wave1.filling{
+        animation-delay: 0s;
+        animation: flow 16s linear infinite forwards,fillup 6s linear forwards ;
+    }
+    section .wave.wave2.filling{
+        animation-delay: -5s;
+        animation: flow 10s linear infinite forwards,fillup 6s linear forwards ;
+    }
+    section .wave.wave3.filling{
+        animation-delay: -10s;
+        animation: flow 6s linear infinite forwards,fillup 6s linear forwards ;
+    }
+    .box{
+        background-color: white;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        bottom: 0px;
+        left:0px;
+    }
+    .box.filling{
+        animation-delay: -1s;
+        animation: fillupblock 6s linear;
+        display: block;
+        z-index: 2001;
+    }
+    .box.nofilling{ display: none;}
     @keyframes flow
     {
         0% { background-position: -1000px 0px; }
         100%{ background-position: 0px 0px; }
     }
+    @keyframes fillup
+    {
+        0% { top: calc(100% - 100px) }
+        100%{ top: calc(0% - 100px); }
+    }
+
+    @keyframes fillupblock
+    {
+        0% { top: 100% }
+        100%{ top: 0% ; }
+    }
+
 }

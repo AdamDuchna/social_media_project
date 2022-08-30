@@ -1,17 +1,15 @@
 import axios from "axios";
 import { Formik,Field,Form } from "formik";
-import { useState } from "react";
 const RegisterForm = ({handleChange,setError}) => {
     const handleSuccesfulRegister = (res) => {
         if(res.status === 201){
+            setError()
             console.log("Success")
         }
         else{ setError("Something went wrong...")}
     }
 
-    const handleUnsuccesfulRegister = (err) => {
-        setError(err.response.data)
-    }
+    const handleUnsuccesfulRegister = (err) => { setError(err.response.data) }
 
     const handleSubmit = (values) => {
         axios

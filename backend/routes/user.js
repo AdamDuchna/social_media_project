@@ -29,7 +29,7 @@ router.post("/register", async (req,res) => {
         user.token = token;
         return res.status(201).json(user);    
     }
-    catch (err){ console.log(err); }
+    catch (err){ return res.send(err); }
 })
 
 router.post("/login", async (req,res) => {
