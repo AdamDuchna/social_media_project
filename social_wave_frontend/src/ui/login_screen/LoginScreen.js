@@ -1,16 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import '../../styling/login_screen/LoginScreen.css';
 import RegisterForm from "./RegisterForm";
 import LoginForm from "./LoginForm";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const LoginScreen = ({setToken ,setUser}) => {
     const [error,setError] = useState();
     const [isLogging,setIsLogging] = useState(true)
     const [filling,setFilling] = useState('nofilling')
+    const navigate = useNavigate()
     const handleChange=()=>{ setIsLogging(!isLogging); setError();}
     const loginSuccess = ()=>{ 
         setFilling('filling')
+        setTimeout( ()=>{navigate('/mainpage')},6000)
         //GET POSTS
       }
     return (

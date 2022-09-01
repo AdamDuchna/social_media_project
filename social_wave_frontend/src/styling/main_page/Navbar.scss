@@ -1,0 +1,49 @@
+.navbar{ 
+    display:flex;
+    height: 50px;
+    padding: 0px 14px 0px 14px;
+    justify-content: space-between;
+    .label{
+        width: 400px;
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+        .logo { 
+            width: 32px;
+            margin-right: 10px;
+            background-color: white;
+            border-radius: 100%;
+            padding:4px;
+         }
+        .name { height: 20px; }
+        .search-bar{
+            margin-left: 12px;
+            height: 20px;
+            border: none;
+            border-radius: 12px;
+            padding: 6px;
+            padding-left: 12px;
+            width: 220px;
+            outline: none;
+        }
+    }
+    .menu{
+        width: 300px;
+        display:flex;
+        justify-content: space-around;
+        align-items: center;
+      .home{width: 24px;}
+      .player{ width: 32px;}
+      .group{ width: 28px;}
+    }
+    .right-box{
+        width: 400px;
+        display:flex;
+        justify-content: flex-end;
+        align-items: center;
+        .message{ width: 28px;}
+        .settings{width: 28px;}
+        img{margin-left: 30px;}
+    }
+    
+}

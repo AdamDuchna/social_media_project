@@ -15,5 +15,5 @@ exports.connect = () => {
     .then(response => {
       console.log(`Connected to MongoDB. Database name: "${response.connections[0].name}"`)
     })
-    .catch(error => console.error('Error connecting to MongoDB', error));
+    .catch(error => console.error(`Error connecting to MongoDB ${error}`));
 };

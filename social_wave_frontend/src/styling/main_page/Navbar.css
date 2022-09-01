@@ -1,0 +1,62 @@
+.navbar {
+  display: flex;
+  height: 50px;
+  padding: 0px 14px 0px 14px;
+  justify-content: space-between;
+}
+.navbar .label {
+  width: 400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar .label .logo {
+  width: 32px;
+  margin-right: 10px;
+  background-color: white;
+  border-radius: 100%;
+  padding: 4px;
+}
+.navbar .label .name {
+  height: 20px;
+}
+.navbar .label .search-bar {
+  margin-left: 12px;
+  height: 20px;
+  border: none;
+  border-radius: 12px;
+  padding: 6px;
+  padding-left: 12px;
+  width: 220px;
+  outline: none;
+}
+.navbar .menu {
+  width: 300px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.navbar .menu .home {
+  width: 24px;
+}
+.navbar .menu .player {
+  width: 32px;
+}
+.navbar .menu .group {
+  width: 28px;
+}
+.navbar .right-box {
+  width: 400px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.navbar .right-box .message {
+  width: 28px;
+}
+.navbar .right-box .settings {
+  width: 28px;
+}
+.navbar .right-box img {
+  margin-left: 30px;
+}/*# sourceMappingURL=Navbar.css.map */
