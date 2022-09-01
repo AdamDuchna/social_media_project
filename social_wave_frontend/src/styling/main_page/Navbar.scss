@@ -16,15 +16,25 @@
             padding:4px;
          }
         .name { height: 20px; }
-        .search-bar{
-            margin-left: 12px;
-            height: 20px;
-            border: none;
-            border-radius: 12px;
-            padding: 6px;
-            padding-left: 12px;
-            width: 220px;
-            outline: none;
+        .search-box{
+            display: flex;
+            .search-bar{
+                margin-left: 12px;
+                height: 20px;
+                border: none;
+                border-radius: 12px;
+                padding: 6px;
+                padding-left: 12px;
+                width: 200px;
+                outline: none;
+                color:#3333cc;
+            }
+            .search{
+                position: relative;
+                width: 20px;
+                height: 20px;
+                right: 30px;
+                top: 6px; }
         }
     }
     .menu{
@@ -44,6 +54,13 @@
         .message{ width: 28px;}
         .settings{width: 28px;}
         img{margin-left: 30px;}
+    }
+    .menu, .right-box{
+        img:hover{
+            transition: transform .2s; 
+            transform: scale(1.4);
+            cursor: pointer;
+        }
     }
     
 }

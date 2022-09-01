@@ -13,7 +13,7 @@ const LoginScreen = ({setToken ,setUser}) => {
     const handleChange=()=>{ setIsLogging(!isLogging); setError();}
     const loginSuccess = ()=>{ 
         setFilling('filling')
-        setTimeout( ()=>{navigate('/mainpage')},6000)
+        setTimeout( ()=>{navigate('/')},6000)
         //GET POSTS
       }
     return (
