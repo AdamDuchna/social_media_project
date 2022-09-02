@@ -4,7 +4,7 @@
     padding: 0px 14px 0px 14px;
     justify-content: space-between;
     .label{
-        width: 400px;
+        width: 420px;
         display:flex;
         justify-content: space-between;
         align-items: center;
@@ -54,6 +54,7 @@
         .message{ width: 28px;}
         .settings{width: 28px;}
         img{margin-left: 30px;}
+        .logout{width: 28px;}
     }
     .menu, .right-box{
         img:hover{

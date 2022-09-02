@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { Component, useEffect } from 'react';
 import {
   BrowserRouter as Router,
   Routes,
-  Route
+  Route,
+  useNavigate
 } from "react-router-dom";
 import LoginScreen from './ui/login_screen/LoginScreen';
 import useToken from './useToken';
 import { useState } from 'react';
 import MainPage from './ui/main_page/MainPage';
+import Posts from './ui/posts/Posts';
 function App() {
   const [user,setUser] = useState()
   return (
@@ -15,7 +17,7 @@ function App() {
         <Router>
             <Routes>
               <Route path='/login' element={<LoginScreen setUser={setUser} />}></Route>
-              <Route path='/' element={<MainPage user={user}/> }></Route>
+              <Route path='/' element={<MainPage user={user} Component={Posts}/>}></Route>
             </Routes>
         </Router>
 

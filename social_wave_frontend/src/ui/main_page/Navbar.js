@@ -5,7 +5,7 @@ const Navbar = () => {
                 <img className="logo" src="/logo.png" ></img>
                 <img className="name" src="/name.png" ></img>
                 <div className="search-box">
-                    <input className="search-bar" spellcheck="false" placeholder="Search through our website"></input>
+                    <input className="search-bar" spellCheck="false" placeholder="Search through our website"></input>
                     <img className="search" src="/search.png" ></img>
 
                     </div>
@@ -17,8 +17,8 @@ const Navbar = () => {
             </div>
             <div className="right-box">
                 <img className="message" src="/message.png"></img>
-                <div className="user-icon"></div>
                 <img className="settings" src="/settings.png"></img>
+                <img className="logout" src="/logout.png"></img>
             </div>
         </div>
     )

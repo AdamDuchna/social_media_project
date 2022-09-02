@@ -5,7 +5,7 @@
   justify-content: space-between;
 }
 .navbar .label {
-  width: 400px;
+  width: 420px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -70,6 +70,9 @@
 }
 .navbar .right-box img {
   margin-left: 30px;
+}
+.navbar .right-box .logout {
+  width: 28px;
 }
 .navbar .menu img:hover, .navbar .right-box img:hover {
   transition: transform 0.2s;

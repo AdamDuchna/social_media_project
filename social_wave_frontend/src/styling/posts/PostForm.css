@@ -1,0 +1,22 @@
+.post-form {
+  display: flex;
+  width: 100%;
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+}
+.post-form .user-icon {
+  border-radius: 100%;
+  width: 32px;
+  margin-right: 12px;
+}
+.post-form .post-form-view {
+  background-color: rgb(247, 247, 247);
+  border: none;
+  width: 100%;
+  text-align: left;
+  padding-left: 12px;
+  border-radius: 24px;
+  color: rgb(119, 119, 119);
+  font-size: 16px;
+}/*# sourceMappingURL=PostForm.css.map */

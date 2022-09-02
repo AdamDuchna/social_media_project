@@ -1,0 +1,26 @@
+.user-menu {
+  width: 27.5%;
+}
+.user-menu > div {
+  width: 420px;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  padding: 8px 0px 8px 0px;
+  color: rgb(23, 4, 86);
+  cursor: pointer;
+}
+.user-menu > div img {
+  margin-left: 14px;
+  width: 32px;
+  padding: 4px;
+  filter: drop-shadow(0px 1px 4px rgba(69, 69, 69, 0.2588235294));
+  margin-right: 8px;
+}
+.user-menu > div .user-icon {
+  border-radius: 100%;
+}
+.user-menu > div:hover {
+  background-color: lightgray;
+  border-radius: 16px;
+}/*# sourceMappingURL=UserMenu.css.map */

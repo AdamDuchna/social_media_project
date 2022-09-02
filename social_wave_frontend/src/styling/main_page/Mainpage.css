@@ -1,5 +1,6 @@
 .mainpage {
   height: 100vh;
+  background-color: rgb(243, 243, 243);
 }
 
 .nav-wrapper {
@@ -33,4 +34,14 @@
   100% {
     top: -20px;
   }
+}
+
+.content-wrapper {
+  display: flex;
+}
+
+.posts-wrapper {
+  width: 45%;
+  display: flex;
+  justify-content: center;
 }/*# sourceMappingURL=Mainpage.css.map */
