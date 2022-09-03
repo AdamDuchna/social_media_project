@@ -6,10 +6,10 @@ import '../../styling/main_page/user_menu/UserMenu.css'
 import '../../styling/posts/PostForm.css'
 
 
-const MainPage = ({user,Component}) => {
+const MainPage = ({user,setUser,Component}) => {
     return(
         <div className="mainpage">
-            <div className="nav-wrapper"><Navbar/></div>
+            <div className="nav-wrapper"><Navbar setUser={setUser} /></div>
             <div className="content-wrapper">
             <UserMenu user={user}/>
             <Component user={user}/>

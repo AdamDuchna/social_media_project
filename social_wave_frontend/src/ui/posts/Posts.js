@@ -4,7 +4,7 @@ const Posts = ({posts,user}) => {
     return ( 
     <div className="posts-wrapper">
         <div className="posts">
-        <PostForm user={user} />
+        <PostForm user={user}/>
         </div>
     </div>
     )

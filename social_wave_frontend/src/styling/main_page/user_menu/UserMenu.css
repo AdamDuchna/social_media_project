@@ -1,8 +1,11 @@
 .user-menu {
   width: 27.5%;
+  position: relative;
+  -webkit-animation: sideslide 2.2s ease-in-out;
+          animation: sideslide 2.2s ease-in-out;
 }
 .user-menu > div {
-  width: 420px;
+  width: 100%;
   display: flex;
   align-items: center;
   font-weight: 600;
@@ -23,4 +26,32 @@
 .user-menu > div:hover {
   background-color: lightgray;
   border-radius: 16px;
+}
+@-webkit-keyframes sideslide {
+  0% {
+    left: -100%;
+  }
+  50% {
+    left: -100%;
+  }
+  90% {
+    left: 12px;
+  }
+  100% {
+    left: 0px;
+  }
+}
+@keyframes sideslide {
+  0% {
+    left: -100%;
+  }
+  50% {
+    left: -100%;
+  }
+  90% {
+    left: 12px;
+  }
+  100% {
+    left: 0px;
+  }
 }/*# sourceMappingURL=UserMenu.css.map */

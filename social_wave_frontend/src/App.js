@@ -17,7 +17,7 @@ function App() {
         <Router>
             <Routes>
               <Route path='/login' element={<LoginScreen setUser={setUser} />}></Route>
-              <Route path='/' element={<MainPage user={user} Component={Posts}/>}></Route>
+              <Route path='/' element={<MainPage user={user} setUser={setUser} Component={Posts}/>}></Route>
             </Routes>
         </Router>
 
