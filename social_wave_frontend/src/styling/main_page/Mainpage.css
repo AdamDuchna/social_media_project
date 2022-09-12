@@ -1,39 +1,52 @@
 .mainpage {
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
   background-color: rgb(243, 243, 243);
 }
 
 .nav-wrapper {
-  position: relative;
+  margin-bottom: 20px;
+  position: -webkit-sticky;
+  position: sticky;
   z-index: 6000;
-  top: -20px;
-  padding-top: 20px;
+  top: 0px;
   background: #00cc99;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
-  position: relative;
-  -webkit-animation: slidedown 1.2s ease-in-out;
-          animation: slidedown 1.2s ease-in-out;
+  -webkit-animation: slidedown2 1s ease-in-out;
+          animation: slidedown2 1s ease-in-out;
 }
-@-webkit-keyframes slidedown {
+@-webkit-keyframes slidedown2 {
   0% {
-    top: -100%;
+    position: relative;
+    top: -300px;
+    padding-top: 20px;
   }
   70% {
+    position: relative;
     top: -12px;
+    padding-top: 20px;
   }
   100% {
+    position: relative;
     top: -20px;
+    padding-top: 20px;
   }
 }
-@keyframes slidedown {
+@keyframes slidedown2 {
   0% {
-    top: -100%;
+    position: relative;
+    top: -300px;
+    padding-top: 20px;
   }
   70% {
+    position: relative;
     top: -12px;
+    padding-top: 20px;
   }
   100% {
+    position: relative;
     top: -20px;
+    padding-top: 20px;
   }
 }
 

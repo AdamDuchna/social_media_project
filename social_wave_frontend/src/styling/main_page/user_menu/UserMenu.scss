@@ -1,6 +1,6 @@
 .user-menu{
     width: 27.5%;
-    position: relative;
+    position: sticky;
     > div{
         width: 100%;
         display:flex;
@@ -24,9 +24,9 @@
     }
     animation: sideslide 2.2s ease-in-out;
     @keyframes sideslide {
-        0% { left: -100%; }
-        50%{ left: -100%; }
-        90%{ left: 12px; }
-        100%{ left: 0px;}
+        0% { left: -100%; position: relative;}
+        50%{ left: -100%; position: relative;}
+        90%{ left: 12px; position: relative;}
+        100%{ left: 0px; position: relative;}
     }
 }

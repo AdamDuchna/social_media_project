@@ -5,6 +5,14 @@
   padding: 20px;
   border-radius: 12px;
 }
+.post-form .user-info-box {
+  display: flex;
+  align-items: center;
+}
+.post-form .post-image {
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
 .post-form .user-icon {
   border-radius: 100%;
   width: 32px;
@@ -43,9 +51,8 @@
   resize: none;
   font-size: 18px;
   margin-top: 10px;
-  min-height: 100px;
-  max-height: 600px;
-  width: 90%;
+  margin-bottom: 20px;
+  width: 100%;
   outline: none;
   border: none;
   font-family: "Segoe UI";
@@ -79,22 +86,26 @@
   -webkit-animation: grow 0.6s ease-in-out;
           animation: grow 0.6s ease-in-out;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 @-webkit-keyframes grow {
   0% {
     height: 60px;
+    overflow: hidden;
   }
   100% {
-    height: 390px;
+    height: 160px;
+    overflow: hidden;
   }
 }
 @keyframes grow {
   0% {
     height: 60px;
+    overflow: hidden;
   }
   100% {
-    height: 390px;
+    height: 160px;
+    overflow: hidden;
   }
 }
 
@@ -135,7 +146,6 @@
 
 .emoji-picker {
   position: absolute;
-  left: calc(70% - 100px);
-  z-index: 8000;
-  bottom: 80px;
+  left: calc(70% - 20px);
+  top: 120px;
 }/*# sourceMappingURL=PostForm.css.map */

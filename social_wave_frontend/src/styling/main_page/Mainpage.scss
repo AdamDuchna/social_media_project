@@ -1,20 +1,20 @@
 .mainpage{
-    height: 100vh;
+    min-height: 100vh;
+    height: 100%;
     background-color: rgb(243, 243, 243);
 }
 .nav-wrapper{
-    position: relative;
+    margin-bottom: 20px;
+    position: sticky;
     z-index: 6000;
-    top: -20px;
-    padding-top: 20px;
+    top: 0px;
     background: #00cc99;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
-    position: relative;
-    animation: slidedown 1.2s ease-in-out;
-    @keyframes slidedown {
-        0% { top: -100%; }
-        70%{ top: -12px; }
-        100%{ top: -20px;}
+    animation: slidedown2 1s ease-in-out;
+    @keyframes slidedown2 {
+        0% { position: relative; top: -300px; padding-top: 20px;}
+        70%{ position: relative; top: -12px; padding-top: 20px; }
+        100%{ position: relative; top: -20px; padding-top: 20px;}
     }
 }
 .content-wrapper{

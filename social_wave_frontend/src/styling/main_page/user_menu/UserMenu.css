@@ -1,6 +1,7 @@
 .user-menu {
   width: 27.5%;
-  position: relative;
+  position: -webkit-sticky;
+  position: sticky;
   -webkit-animation: sideslide 2.2s ease-in-out;
           animation: sideslide 2.2s ease-in-out;
 }
@@ -30,28 +31,36 @@
 @-webkit-keyframes sideslide {
   0% {
     left: -100%;
+    position: relative;
   }
   50% {
     left: -100%;
+    position: relative;
   }
   90% {
     left: 12px;
+    position: relative;
   }
   100% {
     left: 0px;
+    position: relative;
   }
 }
 @keyframes sideslide {
   0% {
     left: -100%;
+    position: relative;
   }
   50% {
     left: -100%;
+    position: relative;
   }
   90% {
     left: 12px;
+    position: relative;
   }
   100% {
     left: 0px;
+    position: relative;
   }
 }/*# sourceMappingURL=UserMenu.css.map */
