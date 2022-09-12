@@ -21,8 +21,11 @@ const userSchema = new Schema({
         required: true  
     },
     registrationDate: Date,
-    topics: [String],
+    friends: [String],
     token: { type: String },
+    image: {
+        type: Object,
+    }
 });
 
 module.exports = model("User", userSchema);

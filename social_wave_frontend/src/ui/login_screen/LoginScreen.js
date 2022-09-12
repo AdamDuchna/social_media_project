@@ -5,7 +5,7 @@ import LoginForm from "./LoginForm";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-const LoginScreen = ({setToken ,setUser}) => {
+const LoginScreen = ({setToken ,setUser, setPosts}) => {
     const [error,setError] = useState();
     const [isLogging,setIsLogging] = useState(true)
     const [filling,setFilling] = useState('nofilling')
@@ -14,7 +14,10 @@ const LoginScreen = ({setToken ,setUser}) => {
     const loginSuccess = ()=>{ 
         setFilling('filling')
         setTimeout( ()=>{navigate('/')},6000)
-        //GET POSTS
+        axios
+        .get('http://localhost:5000/posts/get')
+        .then(res=>setPosts(res.data))
+        .catch(err=>console.log(err))
       }
     return (
         <div className="login-screen">

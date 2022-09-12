@@ -14,6 +14,8 @@ app.use(express.json(),cors(corsOptions));
 PORT = 5000
 
 const user = require('./routes/user');
+const posts = require('./routes/posts')
+app.use('/posts',posts)
 app.use('/user', user);
 
 

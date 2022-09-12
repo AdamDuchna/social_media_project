@@ -3,4 +3,16 @@
 }
 .posts > div {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+.posts .post-box {
+  margin-top: 20px;
+  width: 100%;
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+}
+.posts .post-box img {
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 10px;
 }/*# sourceMappingURL=Posts.css.map */

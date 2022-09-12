@@ -50,12 +50,10 @@
   }
 }
 
-.content-wrapper {
-  display: flex;
-}
-
 .posts-wrapper {
   width: 45%;
   display: flex;
   justify-content: center;
+  margin-left: 27.5%;
+  margin-right: 27.5%;
 }/*# sourceMappingURL=Mainpage.css.map */

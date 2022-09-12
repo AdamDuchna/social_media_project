@@ -1,7 +1,6 @@
 .user-menu {
   width: 27.5%;
-  position: -webkit-sticky;
-  position: sticky;
+  position: fixed;
   -webkit-animation: sideslide 2.2s ease-in-out;
           animation: sideslide 2.2s ease-in-out;
 }
