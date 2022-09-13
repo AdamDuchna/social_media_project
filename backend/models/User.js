@@ -21,11 +21,9 @@ const userSchema = new Schema({
         required: true  
     },
     registrationDate: Date,
-    friends: [String],
+    friends: { type: [Schema.ObjectId], ref: 'User' },
     token: { type: String },
-    image: {
-        type: Object,
-    }
+    image: { type: Object }
 });
 
 module.exports = model("User", userSchema);

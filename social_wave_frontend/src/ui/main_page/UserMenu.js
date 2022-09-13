@@ -16,7 +16,7 @@ const UserMenu = ({user}) => {
                 <div>Groups</div>
             </div>
             <div onClick={()=>navigate("/videos")}>
-                <img className="shorts-icon"src="/player-blue.png"></img>
+                <img className="shorts-icon" src="/player-blue.png"></img>
                 <div>Shorts</div>
             </div>
         </div>

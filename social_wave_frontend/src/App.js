@@ -1,12 +1,10 @@
-import React, { Component, useEffect } from 'react';
+import React from 'react';
 import {
   BrowserRouter as Router,
   Routes,
   Route,
-  useNavigate
 } from "react-router-dom";
 import LoginScreen from './ui/login_screen/LoginScreen';
-import useToken from './useToken';
 import { useState } from 'react';
 import MainPage from './ui/main_page/MainPage';
 import Posts from './ui/posts/Posts';

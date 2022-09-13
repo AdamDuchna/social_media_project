@@ -1,0 +1,35 @@
+.post-box{
+    margin-top: 20px;
+    width: 100%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+
+    .owner-info{
+        display: flex;
+        align-items: center;
+        font-weight: 500;
+        color: rgb(23, 4, 86);
+        .user-icon{ 
+            border-radius: 100%;
+            width: 32px;
+            padding: 4px;
+            margin-right: 4px;    
+        }
+    }
+    .post-content{
+        img{
+            width: 100%;
+            margin-top: 10px;
+            border-radius: 10px;
+        }
+    }
+    .post-interactions{
+        .like-icon{
+            margin-top: 10px;
+            margin-left: 8px;
+            width: 28px;
+        }
+    }
+}

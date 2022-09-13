@@ -17,9 +17,7 @@ const PostForm = ({user}) => {
       if (imageUpload == null) return;
       const imageRef = ref(storage, `images/${imageUpload.name + v4()}`);
       uploadBytes(imageRef, imageUpload)
-      .then((snapshot) => {
-        getDownloadURL(snapshot.ref).then((url) => { uploadPost(url); });
-      });
+      .then((snapshot) => { getDownloadURL(snapshot.ref).then((url) => { uploadPost(url); }); });
     };
     const uploadPost = ( url ) =>{
         axios
@@ -29,8 +27,8 @@ const PostForm = ({user}) => {
     }
 
     const handleSubmit = (e) => { uploadFile(); e.preventDefault(); }
-
     const onEmojiClick = (event, emojiObject) => {setText(text+emojiObject.emoji)};
+
     return ( 
     <div className={`post-form ${status}`}>
         { !status ? 
