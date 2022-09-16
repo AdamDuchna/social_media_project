@@ -3,6 +3,7 @@ const router = express.Router();
 
 const Post = require('../models/Post');
 const User = require('../models/User');
+const Comment = require('../models/Comment');
 
 
 router.post("/post", async(req,res) => {
@@ -22,7 +23,7 @@ router.post("/post", async(req,res) => {
 router.get("/get", async(req,res) =>{
     try{ 
         
-        const posts = await Post.find({}).populate('likes owner').exec()
+        const posts = await Post.find({}).populate('likes owner').populate({ path:'comments', populate: { path:'owner'}} ).exec();
         return res.status(201).json(posts) }
     catch (err){ return res.send(err); }
 })
@@ -35,14 +36,31 @@ router.post("/like", async (req,res) =>{
 
         if(result){ 
             const filtered_likes = post.likes.filter(e=> e.toString() !== user_id )
-            const result = await Post.findByIdAndUpdate( post_id , {likes: filtered_likes}).populate('likes owner').exec()
-            return res.status(201).json(result)
+            const result2 = await Post.findByIdAndUpdate( post_id , {likes: filtered_likes}).exec();
+            const post2 = await Post.findById(post_id).populate('likes owner').populate({ path:'comments', populate: { path:'owner'}} ).exec();
+            return res.status(201).json(post2)
         }
-        else{ 
-            const result = await Post.findByIdAndUpdate( post_id , {likes: [...post.likes, user_id]}).populate('likes owner').exec()
-            return res.status(201).json(result)
+        else{
+            const result2 = await Post.findByIdAndUpdate( post_id , {likes: [...post.likes, user_id]}).exec();
+            const post2 = await Post.findById(post_id).populate('likes owner').populate({ path:'comments', populate: { path:'owner'}} ).exec();
+            return res.status(201).json(post2)
         }
 
+    }
+    catch (err){ return res.send(err); }
+})
+
+
+router.post("/comment", async (req,res) => {
+    try{
+        const { user_id, post_id, comment} = req.body;
+        console.log(user_id, post_id, comment)
+        const result = await Comment.create({ owner: user_id ,text: comment})
+        console.log(result)
+        const result2 = await Post.findByIdAndUpdate( post_id, {$push: {comments: result._id }}).exec();
+        const post2 = await Post.findById(post_id).populate('likes owner').populate({ path:'comments', populate: { path:'owner'}} ).exec();
+        console.log(post2)
+        return res.status(201).json(post2)
     }
     catch (err){ return res.send(err); }
 })

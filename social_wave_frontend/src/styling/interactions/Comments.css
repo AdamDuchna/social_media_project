@@ -1,0 +1,98 @@
+.comment-box {
+  width: 50%;
+  display: flex;
+  margin-bottom: 8px;
+  align-items: center;
+  justify-content: flex-end;
+}
+.comment-box .comment-text:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.comment-bottom {
+  width: 100%;
+  border-top: 1px rgb(220, 220, 220) solid;
+  background-color: white;
+  padding-top: 8px;
+}
+.comment-bottom .comment-input > textarea {
+  font-family: "Segoe UI";
+  background-color: rgb(247, 247, 247);
+  border: none;
+  width: 100%;
+  border-radius: 24px;
+  color: rgb(119, 119, 119);
+  font-size: 16px;
+  padding: 10px;
+  padding-left: 16px;
+  resize: none;
+  outline: none;
+  border: none;
+}
+.comment-bottom input:focus {
+  outline: 1px solid #c0c0c0;
+}
+.comment-bottom .user-icon {
+  align-self: flex-start;
+}
+
+.comment-owner {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  font-size: medium;
+  color: rgb(37, 13, 117);
+  padding-top: 12px;
+}
+.comment-owner .user-icon {
+  align-self: flex-start;
+  border-radius: 100%;
+  width: 32px;
+  padding: 4px;
+  margin-right: 4px;
+  cursor: pointer;
+}
+.comment-owner .name {
+  cursor: pointer;
+}
+.comment-owner .comment-data {
+  padding: 6px;
+  padding-left: 12px;
+  padding-right: 12px;
+  background-color: rgb(247, 247, 247);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+}
+.comment-owner .comment-data .text {
+  color: #383838;
+  font-weight: 400;
+}
+
+.comment-bottom.true {
+  -webkit-animation: grow2 4s ease-in;
+          animation: grow2 4s ease-in;
+  position: relative;
+  overflow: visible;
+}
+@-webkit-keyframes grow2 {
+  0% {
+    max-height: 0px;
+    overflow: hidden;
+  }
+  100% {
+    max-height: 10000px;
+    overflow: hidden;
+  }
+}
+@keyframes grow2 {
+  0% {
+    max-height: 0px;
+    overflow: hidden;
+  }
+  100% {
+    max-height: 10000px;
+    overflow: hidden;
+  }
+}/*# sourceMappingURL=Comments.css.map */

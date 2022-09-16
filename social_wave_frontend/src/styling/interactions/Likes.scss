@@ -1,0 +1,18 @@
+.like-box{
+    display:flex;
+    align-items: center;
+    margin-bottom: 8px;
+    width: 50%;
+    .like-icon{
+        width: 28px;
+        margin-right: 10px; 
+        cursor: pointer;
+    }
+    .like-text:hover{ 
+         cursor: pointer;
+        text-decoration: underline;
+    }
+    .like-icon:hover{animation: wobble 1s ease;}
+    div{ margin-top: 6px;}
+}
+

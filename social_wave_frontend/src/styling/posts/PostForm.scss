@@ -7,6 +7,8 @@
     .user-info-box{
       display: flex;
       align-items: center;
+      cursor: pointer;
+      
     }
     .post-image{
       margin-top: -20px;
@@ -28,6 +30,8 @@
         border-radius: 24px;
         color: rgb(119, 119, 119);
         font-size: 16px;
+        padding: 10px;
+        padding-left: 16px;
         cursor: pointer;
     }
     .post-form-full-view{
@@ -41,6 +45,7 @@
           height: 24px;
           left: calc( 100% - 24px);
           bottom: 28px;
+          cursor: pointer;
         }
         .content{
             display: flex;

@@ -5,10 +5,10 @@
     padding: 20px;
     border-radius: 12px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
-
-    .owner-info{
+    .owner-info, .comment-input{
         display: flex;
         align-items: center;
+        cursor: pointer;
         font-weight: 500;
         color: rgb(23, 4, 86);
         .user-icon{ 
@@ -25,11 +25,36 @@
             border-radius: 10px;
         }
     }
-    .post-interactions{
-        .like-icon{
-            margin-top: 10px;
-            margin-left: 8px;
-            width: 28px;
-        }
+}
+.post-interactions{
+    padding-left: 10px ;
+    padding-right: 10px;
+    display: flex;
+    align-self: center;
+    margin-top: 8px;
+    font-size: large;
+    flex-wrap: wrap;
+    color: gray;
+}
+.post-wrapper{
+    animation: comeup 5s ease-in-out;
+    position: relative;
+    @keyframes comeup {
+        0% {top: 1000px; }
+        80%{ top: 1000px;}
+        95%{ top: -10px; }
+        100%{ top: 0px;}
     }
+}
+
+@keyframes wobble {
+    0%, 100% {
+        transform: translateX(0%);
+        transform-origin: 50% 50%;
+    }
+    15% {transform: translateX(-12px) rotate(-16deg);}
+    30% {transform: translateX(calc(12px / 2)) rotate(16deg);}
+    45% { transform: translateX(calc(-12px / 2)) rotate(calc(-16deg / 1.8)); }
+    60% { transform: translateX(calc(12px / 3.3)) rotate(calc(16deg / 3)); }
+    75% { transform: translateX(calc(-12px / 5.5)) rotate(calc(-16deg / 5)); }
 }

@@ -11,12 +11,13 @@ import Posts from './ui/posts/Posts';
 function App() {
   const [user,setUser] = useState()
   const [posts,setPosts] = useState()
+
   return (
     <div className="App">
         <Router>
             <Routes>
               <Route path='/login' element={<LoginScreen setUser={setUser} setPosts={setPosts} />}></Route>
-              <Route path='/' element={<MainPage user={user} setUser={setUser} Component={Posts}/>}></Route>
+              <Route path='/' element={<MainPage posts={posts} setPosts={setPosts} user={user} setUser={setUser} Component={Posts}/>}></Route>
             </Routes>
         </Router>
 
