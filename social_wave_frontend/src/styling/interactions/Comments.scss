@@ -19,7 +19,7 @@
         font-family: 'Segoe UI';
         background-color: rgb(247, 247, 247);
         border: none;
-        width: 100%;
+        width: 82%;
         border-radius: 24px;
         color: rgb(119, 119, 119);
         font-size: 16px;
@@ -32,8 +32,22 @@
     input:focus{
         outline: 1px solid #c0c0c0;
     }
-    .user-icon{ 
-        align-self: flex-start; 
+    .user-icon{
+        margin-top: 4px;
+        align-self: flex-start;
+        margin-left: 14px;
+        margin-right: 8px;
+        width: 32px;
+        height: 32px;
+        position: relative;
+        overflow: hidden;
+        border-radius: 100%;
+    }
+    .user-icon img {
+        display: inline;
+        margin: 0 auto;
+        height: auto;
+        width: 100%;
     }
 }
 
@@ -45,25 +59,18 @@
     font-size: medium;
     color: rgb(37, 13, 117);
     padding-top: 12px;
-    .user-icon{ 
-        align-self: flex-start;
-        border-radius: 100%;
-        width: 32px;
-        padding: 4px;
-        margin-right: 4px; 
-        cursor: pointer;   
-    }
     .name{ cursor: pointer;  }
     .comment-data{
+        max-width: 82%;
         padding: 6px;
         padding-left: 12px;
         padding-right: 12px;
         background-color: rgb(247, 247, 247);
         border-radius: 12px;
-        display: flex;
-        flex-direction: column;
-        .text{color:#383838;
-        font-weight: 400;}
+        .text{
+            color:#383838;
+            font-weight: 400;
+        }
     }
 }
 .comment-bottom.true{

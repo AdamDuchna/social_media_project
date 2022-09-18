@@ -8,13 +8,12 @@ import Likes from "../interactions/Likes";
 const PostList =({posts,replacePost,getPosts, user}) =>{
     const navigate = useNavigate()
     useEffect(()=>{if(!posts){getPosts()}})
-    console.log(posts)
     return(
         <div className="post-wrapper">
             { posts && posts.map(post=>
             (<div key={post._id} className='post-box'>
-                <div className="owner-info" onClick={()=>{navigate(`${post.owner.username}`)}}>
-                    { post.owner && post.owner.image ? <img className="user-icon"></img> : <img className="user-icon" src="/default-avatar.png"></img> }
+                <div className="owner-info" onClick={()=>{navigate(`/${post.owner.username}`) }}>
+                    <div className="user-icon">{ post.owner && post.owner.image ? <img src={`${post.owner.image}`} ></img> : <img src="/default-avatar.png"></img> } </div>
                     <div>{post.owner.first_name} {post.owner.last_name}</div>
                 </div>
                 <div className="post-content">

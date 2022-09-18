@@ -12,11 +12,26 @@
         img{ 
             margin-left: 14px;
             width: 32px;
-            padding: 4px;      
-            filter: drop-shadow(0px 1px 4px #45454542);
+            height: 32px;   
             margin-right: 8px;
         }
-        .user-icon{ border-radius: 100%;}
+        .user-icon{ 
+            margin-left: 14px;
+            margin-right: 8px;
+            width: 32px;
+            height: 32px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 100%;
+        }
+        .user-icon img {
+            display: inline;
+            margin: 0 auto;
+            height: auto;
+            width: 100%;
+        }
+
+        
     }
     > div:hover{
         background-color: lightgray;

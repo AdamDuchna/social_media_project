@@ -3,8 +3,8 @@ const UserMenu = ({user}) => {
     const navigate = useNavigate()
     return(
         <div className="user-menu">
-            <div onClick={()=>{navigate(`${user.username}`)}}>
-                { user && user.image ? <img className="user-icon"></img> : <img className="user-icon" src="/default-avatar.png"></img> }
+            <div onClick={()=>{navigate(`/${user.username}`)}}>
+                <div className="user-icon">{ user && user.image ? <img  src={`${user.image}`} ></img> : <img  src="/default-avatar.png"></img> } </div>
                 { user ? <div>{user.first_name} {user.last_name}</div> : <>User Missing</>}
             </div>
             <div onClick={()=>navigate("/friends")}>

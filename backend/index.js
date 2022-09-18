@@ -14,9 +14,12 @@ app.use(express.json(),cors(corsOptions));
 PORT = 5000
 
 const user = require('./routes/user');
-const posts = require('./routes/posts')
+const posts = require('./routes/posts');
+const profile = require('./routes/profile');
+
 app.use('/posts',posts)
 app.use('/user', user);
+app.use('/profile', profile)
 
 
 app.listen(PORT, () => {

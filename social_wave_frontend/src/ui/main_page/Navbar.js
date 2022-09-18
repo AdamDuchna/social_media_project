@@ -17,7 +17,6 @@ const Navbar = ({setUser}) => {
             </div>
             <div className="right-box">
                 <img className="message" src="/message.png"></img>
-                <img className="settings" src="/settings.png"></img>
                 <Link to="/login" onClick={()=>setUser()}><img className="logout" src="/logout.png"></img></Link>
             </div>
         </div>

@@ -1,6 +1,5 @@
 .post-box {
   margin-top: 20px;
-  width: 100%;
   background-color: white;
   padding: 20px;
   border-radius: 12px;
@@ -14,10 +13,18 @@
   color: rgb(23, 4, 86);
 }
 .post-box .owner-info .user-icon, .post-box .comment-input .user-icon {
-  border-radius: 100%;
+  margin-right: 6px;
   width: 32px;
-  padding: 4px;
-  margin-right: 4px;
+  height: 32px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 100%;
+}
+.post-box .owner-info .user-icon img, .post-box .comment-input .user-icon img {
+  display: inline;
+  margin: 0 auto;
+  height: auto;
+  width: 100%;
 }
 .post-box .post-content img {
   width: 100%;
@@ -37,15 +44,15 @@
 }
 
 .post-wrapper {
-  -webkit-animation: comeup 5s ease-in-out;
-          animation: comeup 5s ease-in-out;
+  -webkit-animation: comeup 4s ease-in-out;
+          animation: comeup 4s ease-in-out;
   position: relative;
 }
 @-webkit-keyframes comeup {
   0% {
     top: 1000px;
   }
-  80% {
+  75% {
     top: 1000px;
   }
   95% {
@@ -59,7 +66,7 @@
   0% {
     top: 1000px;
   }
-  80% {
+  75% {
     top: 1000px;
   }
   95% {

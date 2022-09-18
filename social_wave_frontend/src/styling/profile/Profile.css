@@ -1,0 +1,167 @@
+.owner-posts {
+  width: calc(60% - 40px);
+}
+
+.profile {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-self: center;
+  align-self: center;
+  width: 70%;
+}
+.profile-content .upload {
+  left: 140px;
+  bottom: 20px;
+  position: absolute;
+  background-color: rgba(184, 184, 184, 0.26);
+  height: 32px;
+  width: 32px;
+  border-radius: 26px;
+  padding: 6px;
+  cursor: pointer;
+}
+
+.user-info {
+  bottom: 90px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px;
+  font-weight: 500;
+  font-size: 30px;
+  color: rgb(23, 4, 86);
+}
+.user-info .name-wrapper {
+  margin-left: 12px;
+}
+.user-info .user-icon {
+  margin-left: 14px;
+  margin-right: 8px;
+  width: 160px;
+  height: 160px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 100%;
+}
+.user-info .user-icon img {
+  display: inline;
+  margin: 0 auto;
+  height: auto;
+  width: 100%;
+}
+.user-info .username {
+  position: absolute;
+  font-weight: 300;
+  font-size: 14px;
+}
+.user-info .friends-count {
+  bottom: 36px;
+  position: absolute;
+  font-weight: 400;
+  font-size: 16px;
+}
+.user-info .interactions-wrapper {
+  bottom: 20px;
+  right: 10px;
+  position: absolute;
+  display: flex;
+}
+.user-info .interactions-wrapper .friend-button {
+  margin-right: 12px;
+  background-color: #3333cc;
+}
+.user-info .interactions-wrapper .follow-button {
+  background-color: #00cc99;
+}
+.user-info .interactions-wrapper div {
+  cursor: pointer;
+  font-size: 16px;
+  padding: 8px;
+  border-radius: 12px;
+  color: white;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+
+.user-info-wrapper {
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  position: relative;
+  border-radius: 20px;
+  height: calc(20vw + 110px);
+  width: 100%;
+}
+.user-info-wrapper .user-background {
+  height: 20vw;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  top: 0px;
+  -webkit-mask-image: linear-gradient(0deg, rgba(89, 131, 252, 0) 0%, rgb(255, 255, 255) 12%);
+          mask-image: linear-gradient(0deg, rgba(89, 131, 252, 0) 0%, rgb(255, 255, 255) 12%);
+}
+.user-info-wrapper .user-background img {
+  display: inline;
+  margin: 0 auto;
+  height: auto;
+  width: 100%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.user-info-wrapper .upload.background {
+  left: 10px;
+  top: 10px;
+}
+
+.user-data {
+  width: calc(40% + 20px);
+  margin-right: 20px;
+}
+
+.photos-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.photos-list .photo {
+  margin: 4px;
+  width: 40%;
+  height: 11.5vw;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 3;
+  flex-grow: 3;
+  border-radius: 16px;
+}
+.photos-list .photo img {
+  display: inline;
+  margin: 0 auto;
+  height: auto;
+  width: 100%;
+}
+
+.user-data > div {
+  margin-top: 20px;
+  padding: 20px;
+  font-weight: 500;
+  color: rgb(23, 4, 86);
+  font-size: larger;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  background-color: white;
+}
+
+.user-data > div > div {
+  margin: 10px 0px 10px 0px;
+  font-size: medium;
+  font-weight: 400;
+}
+
+#inputTag, #inputTag2 {
+  display: none;
+}/*# sourceMappingURL=Profile.css.map */

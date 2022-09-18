@@ -1,6 +1,5 @@
 .post-box{
     margin-top: 20px;
-    width: 100%;
     background-color: white;
     padding: 20px;
     border-radius: 12px;
@@ -12,10 +11,18 @@
         font-weight: 500;
         color: rgb(23, 4, 86);
         .user-icon{ 
-            border-radius: 100%;
+            margin-right: 6px; 
             width: 32px;
-            padding: 4px;
-            margin-right: 4px;    
+            height: 32px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 100%;
+        }
+        .user-icon img {
+            display: inline;
+            margin: 0 auto;
+            height: auto;
+            width: 100%;
         }
     }
     .post-content{
@@ -37,11 +44,11 @@
     color: gray;
 }
 .post-wrapper{
-    animation: comeup 5s ease-in-out;
+    animation: comeup 4s ease-in-out;
     position: relative;
     @keyframes comeup {
         0% {top: 1000px; }
-        80%{ top: 1000px;}
+        75%{ top: 1000px;}
         95%{ top: -10px; }
         100%{ top: 0px;}
     }

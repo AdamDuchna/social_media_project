@@ -23,7 +23,8 @@ const userSchema = new Schema({
     registrationDate: Date,
     friends: { type: [Schema.ObjectId], ref: 'User' },
     token: { type: String },
-    image: { type: Object }
+    image: { type: String },
+    background: { type: String },
 });
 
 module.exports = model("User", userSchema);

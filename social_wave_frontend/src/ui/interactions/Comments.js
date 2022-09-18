@@ -20,14 +20,14 @@ const Comments = ({replacePost,comments, post_id, user}) => {
         </div>
         { showComments ? <div className={`comment-bottom ${showComments}`}>
             <div className="comment-input" >
-                { user && user.image ? <img className="user-icon" onClick={()=>{navigate(`${user.username}`)}}></img> : <img className="user-icon" src="/default-avatar.png" onClick={()=>{navigate(`${user.username}`)}}></img> }
+                <div className="user-icon">{ user && user.image ? <img src={user.image} onClick={()=>{navigate(`${user.username}`)}}></img> : <img  src="/default-avatar.png" onClick={()=>{navigate(`${user.username}`)}}></img> }</div>
                 <TextareaAutosize value={comment} onKeyDown={handleEnter} placeholder="Write a comment..."
                 spellCheck="false" required maxRows="20" minRows="1" onChange={e=>setComment(e.target.value)} />
             </div>
             { comments && comments.map( comment =>(
                 <div>
                     <div className="comment-owner" onClick={()=>{navigate(`${comment.owner.username}`)}}>
-                    { comment.owner && comment.owner.image ? <img className="user-icon"></img> : <img className="user-icon" src="/default-avatar.png"></img> }
+                    <div className="user-icon">{ comment.owner && comment.owner.image ? <img src={`${comment.owner.image}`} ></img> : <img src="/default-avatar.png"></img> } </div>
                     <div className="comment-data">
                         <div onClick={()=>{navigate(`${comment.owner.username}`)}} className='name'>{comment.owner.first_name} {comment.owner.last_name}</div>
                         <div className="text">{comment.text}</div>

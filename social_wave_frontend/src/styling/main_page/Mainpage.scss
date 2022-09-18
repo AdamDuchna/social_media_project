@@ -1,10 +1,10 @@
 .mainpage{
+    padding-top: 20px;
     min-height: 100vh;
     height: 100%;
     background-color: rgb(243, 243, 243);
 }
 .nav-wrapper{
-    margin-bottom: 20px;
     position: sticky;
     z-index: 6000;
     top: 0px;
@@ -18,9 +18,9 @@
     }
 }
 .posts-wrapper{
-    width: 45%;
+    width: 50%;
     display: flex;
     justify-content: center;
-    margin-left: 27.5%;
-    margin-right: 27.5%;
+    margin-left: 25%;
+    margin-right: 25%;
 }

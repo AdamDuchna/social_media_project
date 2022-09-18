@@ -1,6 +1,5 @@
 .post-form {
   display: flex;
-  width: 100%;
   background-color: white;
   padding: 20px;
   border-radius: 12px;
@@ -72,6 +71,7 @@
 .post-form .post-form-full-view .post-button {
   width: 40%;
   border: none;
+  padding: 12px;
   border-radius: 8px;
   font-weight: 700;
   cursor: not-allowed;

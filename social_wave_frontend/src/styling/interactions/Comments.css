@@ -20,7 +20,7 @@
   font-family: "Segoe UI";
   background-color: rgb(247, 247, 247);
   border: none;
-  width: 100%;
+  width: 82%;
   border-radius: 24px;
   color: rgb(119, 119, 119);
   font-size: 16px;
@@ -34,7 +34,21 @@
   outline: 1px solid #c0c0c0;
 }
 .comment-bottom .user-icon {
+  margin-top: 4px;
   align-self: flex-start;
+  margin-left: 14px;
+  margin-right: 8px;
+  width: 32px;
+  height: 32px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 100%;
+}
+.comment-bottom .user-icon img {
+  display: inline;
+  margin: 0 auto;
+  height: auto;
+  width: 100%;
 }
 
 .comment-owner {
@@ -45,25 +59,16 @@
   color: rgb(37, 13, 117);
   padding-top: 12px;
 }
-.comment-owner .user-icon {
-  align-self: flex-start;
-  border-radius: 100%;
-  width: 32px;
-  padding: 4px;
-  margin-right: 4px;
-  cursor: pointer;
-}
 .comment-owner .name {
   cursor: pointer;
 }
 .comment-owner .comment-data {
+  max-width: 82%;
   padding: 6px;
   padding-left: 12px;
   padding-right: 12px;
   background-color: rgb(247, 247, 247);
   border-radius: 12px;
-  display: flex;
-  flex-direction: column;
 }
 .comment-owner .comment-data .text {
   color: #383838;
