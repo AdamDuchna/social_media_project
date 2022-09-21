@@ -1,7 +1,6 @@
 .comment-box{
     width: 50%;
     display:flex;
-    margin-bottom: 8px;
     align-items: center;
     justify-content: flex-end;
     .comment-text:hover{
@@ -14,7 +13,7 @@
     width: 100%;
     border-top: 1px rgb(220, 220, 220) solid;
     background-color: white;
-    padding-top: 8px;
+    padding-top: 12px;
     .comment-input > textarea{
         font-family: 'Segoe UI';
         background-color: rgb(247, 247, 247);
@@ -35,7 +34,7 @@
     .user-icon{
         margin-top: 4px;
         align-self: flex-start;
-        margin-left: 14px;
+        margin-left: 8px;
         margin-right: 8px;
         width: 32px;
         height: 32px;
@@ -58,7 +57,6 @@
     font-weight: 500;
     font-size: medium;
     color: rgb(37, 13, 117);
-    padding-top: 12px;
     .name{ cursor: pointer;  }
     .comment-data{
         max-width: 82%;
@@ -81,4 +79,52 @@
         0% { max-height: 0px; overflow: hidden;}
         100%{ max-height: 10000px; overflow: hidden;}
     }
+}
+
+.sub-interactions{
+    width: 70%;
+    display: flex;
+    margin-left: 36px;
+    top: -8px;
+    left: -14px;
+    padding-left: 28px;
+    position: relative;
+    align-items: center;
+    margin-top: 8px;
+    font-size: large;
+    flex-wrap: wrap;
+    color: gray;
+    font-size: small;
+    border-left: 2px rgb(247, 247, 247) solid;
+    .comment-box{ 
+        width: auto; 
+        justify-content: left;
+    }
+    .comment-bottom{
+        border-top: none;
+        margin-left: 0px;
+    }
+    .like-box{
+        width: auto; 
+        margin-bottom: 6px;
+        margin-right: 8px;
+        .like-icon{
+            width: 20px;
+            height: 20px;
+            margin-right: 4px; 
+        }
+    }
+    
+}
+.emoji-picker{
+    position: absolute;
+}
+
+.smiley{
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    right:  calc( 24px);
+    bottom: 10px;
+    cursor: pointer;
 }

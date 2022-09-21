@@ -8,13 +8,13 @@ import { ref, uploadBytes, getDownloadURL} from "firebase/storage";
 import {v4} from "uuid"
 
 const PostForm = ({user}) => {
-    const [status,setStatus] = useState(false);
+    const [status,setStatus] = useState(undefined);
     const [text,setText] = useState('');
     const [showEmojis,setShowEmojis] = useState(false);
     const [imageUpload, setImageUpload] = useState(null);
     
     const uploadFile = async () => {
-      if (imageUpload == null) return;
+      if (imageUpload ===  null){uploadPost()}
       const imageRef = ref(storage, `images/${imageUpload.name + v4()}`);
       uploadBytes(imageRef, imageUpload)
       .then((snapshot) => { getDownloadURL(snapshot.ref).then((url) => { uploadPost(url); }); });
@@ -24,24 +24,26 @@ const PostForm = ({user}) => {
         .post('http://localhost:5000/posts/post',{ owner: user,text: text, image: url })
         .then(res=>{console.log(res)})
         .catch(err=>{console.log(err)})
+        document.location.reload();
     }
 
-    const handleSubmit = (e) => { uploadFile(); e.preventDefault(); }
+    const handleSubmit = (e) => { uploadFile(); e.preventDefault()}
     const onEmojiClick = (event, emojiObject) => {setText(text+emojiObject.emoji)};
 
     return ( 
-    <div className={`post-form ${status}`}>
+    <div className={`post-form post-form-${status}`}>
         { !status ? 
         <>
-            { user && user.image ? <img></img> : <img className="user-icon" src="/default-avatar.png"></img> } 
+           <div className="user-icon">{ user && user.image ? <img src={user.image}></img> : <img className="user-icon" src="/default-avatar.png"></img> }</div>
             <button onClick={()=>{setStatus(!status)}} className="post-form-view">
             {`What's on your mind, ${user ? user.first_name : "wait who are you"}?`}
             </button>
         </>
         : 
         <div className='post-form-full-view'>
+            <div className='close-button' onClick={()=>{setStatus(!status)}}>X</div>
             <div className='user-info-box'>
-                { user && user.image ? <img></img> : <img className="user-icon" src="/default-avatar.png"></img> } 
+                <div className="user-icon">{ user && user.image ? <img src={user.image}></img> : <img className="user-icon" src="/default-avatar.png"></img> }</div>
                 <div className='user-fullname'>{ user ? <>{user.first_name} {user.last_name}</> : "User Missing"}</div>
             </div>
             <div className='content'>

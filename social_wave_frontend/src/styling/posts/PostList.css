@@ -8,14 +8,13 @@
 .post-box .owner-info, .post-box .comment-input {
   display: flex;
   align-items: center;
-  cursor: pointer;
   font-weight: 500;
   color: rgb(23, 4, 86);
 }
 .post-box .owner-info .user-icon, .post-box .comment-input .user-icon {
   margin-right: 6px;
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
   position: relative;
   overflow: hidden;
   border-radius: 100%;
@@ -26,6 +25,27 @@
   height: auto;
   width: 100%;
 }
+.post-box .owner-info .date, .post-box .comment-input .date {
+  display: flex;
+  position: absolute;
+  right: 20px;
+}
+.post-box .owner-info .name, .post-box .owner-info .user-icon, .post-box .comment-input .name, .post-box .comment-input .user-icon {
+  cursor: pointer;
+}
+.post-box .comment-input .user-icon {
+  margin-right: 6px;
+  width: 32px;
+  height: 32px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 100%;
+}
+.post-box .post-content {
+  margin-top: 12px;
+  margin-bottom: 12px;
+  font-size: large;
+}
 .post-box .post-content img {
   width: 100%;
   margin-top: 10px;
@@ -33,22 +53,19 @@
 }
 
 .post-interactions {
-  padding-left: 10px;
-  padding-right: 10px;
   display: flex;
   align-self: center;
-  margin-top: 8px;
   font-size: large;
   flex-wrap: wrap;
   color: gray;
 }
 
 .post-wrapper {
-  -webkit-animation: comeup 4s ease-in-out;
-          animation: comeup 4s ease-in-out;
+  -webkit-animation: comedown2 4s ease-in-out;
+          animation: comedown2 4s ease-in-out;
   position: relative;
 }
-@-webkit-keyframes comeup {
+@-webkit-keyframes comedown2 {
   0% {
     top: 1000px;
   }
@@ -62,7 +79,7 @@
     top: 0px;
   }
 }
-@keyframes comeup {
+@keyframes comedown2 {
   0% {
     top: 1000px;
   }

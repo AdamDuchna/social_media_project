@@ -7,13 +7,12 @@
     .owner-info, .comment-input{
         display: flex;
         align-items: center;
-        cursor: pointer;
         font-weight: 500;
         color: rgb(23, 4, 86);
         .user-icon{ 
             margin-right: 6px; 
-            width: 32px;
-            height: 32px;
+            width: 36px;
+            height: 36px;
             position: relative;
             overflow: hidden;
             border-radius: 100%;
@@ -24,8 +23,27 @@
             height: auto;
             width: 100%;
         }
+        .date{
+            display: flex;
+            position: absolute;
+            right: 20px;
+        }
+        .name, .user-icon {cursor: pointer;}
+    }
+    .comment-input{
+        .user-icon{ 
+            margin-right: 6px; 
+            width: 32px;
+            height: 32px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 100%;
+        }
     }
     .post-content{
+        margin-top: 12px;
+        margin-bottom: 12px;
+        font-size: large;
         img{
             width: 100%;
             margin-top: 10px;
@@ -34,19 +52,16 @@
     }
 }
 .post-interactions{
-    padding-left: 10px ;
-    padding-right: 10px;
     display: flex;
     align-self: center;
-    margin-top: 8px;
     font-size: large;
     flex-wrap: wrap;
     color: gray;
 }
 .post-wrapper{
-    animation: comeup 4s ease-in-out;
+    animation: comedown2 4s ease-in-out;
     position: relative;
-    @keyframes comeup {
+    @keyframes comedown2 {
         0% {top: 1000px; }
         75%{ top: 1000px;}
         95%{ top: -10px; }

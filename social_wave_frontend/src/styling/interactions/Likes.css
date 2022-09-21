@@ -19,4 +19,10 @@
 }
 .like-box div {
   margin-top: 6px;
+}
+
+.reply-likes {
+  bottom: -40px;
+  left: -100px;
+  position: relative;
 }/*# sourceMappingURL=Likes.css.map */

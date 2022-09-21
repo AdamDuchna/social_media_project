@@ -1,35 +1,27 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import TextareaAutosize from 'react-textarea-autosize';
-import CommentsReply from "./CommentsReply";
 import CommentsLike from "./CommentsLike";
-const Comments = ({replacePost,comments, post_id, user}) => {
+const CommentsReply = ({replacePost,comments, comment_id, post_id, user}) => {
     const navigate = useNavigate()
     const [showComments,setShowComments] = useState(false)
-    const [comment,setComment] = useState('')
-    const [commentCount, setCommentCount ] = useState(0)
-
+    const [comment,setComment] = useState()
     const commentPost = ()=>{
         axios
-        .post('http://localhost:5000/posts/comment',{post_id: post_id, user_id: user._id, comment: comment})
+        .post('http://localhost:5000/comments/reply',{post_id:post_id, comment_id: comment_id, user_id: user._id, comment: comment})
         .then(res=>replacePost(res.data))
         .catch(err=>console.log(err))
     }
     const handleEnter = (e) => { if(e.key === 'Enter'){
         e.preventDefault();
         setComment('');
-        commentPost(comment)}}
-    const countComments = () => {
-        var count = 0;
-        comments.forEach(e => { count = count + e.comments.length + 1 });
-        setCommentCount(count)
+        commentPost(comment)}
     }
-    useEffect( countComments , [comments])
     return (
         <>
         <div className="comment-box">
-            <div className="comment-text" onClick={()=>{setShowComments(!showComments)}}>{ comments.length === 0 ? "Comment" : `${commentCount} Comments` }</div>
+            <div className="comment-text" onClick={()=>{setShowComments(!showComments)}}>{ comments.length === 0 ? "Reply" : `${comments.length} Replies` }</div>
         </div>
         { showComments ? <div className={`comment-bottom ${showComments}`}>
             { comments && comments.map( comment =>(
@@ -42,19 +34,18 @@ const Comments = ({replacePost,comments, post_id, user}) => {
                     </div>
                     </div>
                     <div className="sub-interactions">
-                    <CommentsLike post_id={post_id} user={user} comment_id={comment._id} replacePost={replacePost} likes={comment.likes}/>
-                    <CommentsReply comment_id={comment._id} user={user} replacePost={replacePost} comments={comment.comments} post_id={post_id} />
+                    <CommentsLike post_id={post_id} comment_id={comment._id} user={user} replacePost={replacePost} likes={comment.likes}/>
                     </div>
                 </div>
             ))}
-            <form className="comment-input" onSubmit={handleEnter}>
+            <div className="comment-input" >
                 <div className="user-icon">{ user && user.image ? <img src={user.image} onClick={()=>{navigate(`${user.username}`)}}></img> : <img  src="/default-avatar.png" onClick={()=>{navigate(`${user.username}`)}}></img> }</div>
-                <TextareaAutosize value={comment} onChange={e=>setComment(e.target.value)} onKeyDown={handleEnter} placeholder="Write a comment..."
-                spellCheck="false" required maxRows="20" minRows="1" />
-            </form>
+                <TextareaAutosize value={comment} onKeyDown={handleEnter} placeholder="Reply to a comment..."
+                spellCheck="false" required maxRows="20" minRows="1" onChange={e=>setComment(e.target.value)} />
+            </div>
         </div> : <></> }
         </>
     )
 }
 
-export default Comments;
+export default CommentsReply;
