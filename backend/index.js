@@ -16,10 +16,12 @@ PORT = 5000
 const user = require('./routes/user');
 const posts = require('./routes/posts');
 const profile = require('./routes/profile');
+const comments = require('./routes/comments');
 
 app.use('/posts',posts)
 app.use('/user', user);
 app.use('/profile', profile)
+app.use('/comments', comments)
 
 
 app.listen(PORT, () => {
