@@ -34,7 +34,7 @@ const Comments = ({replacePost,comments, post_id, user}) => {
         { showComments ? <div className={`comment-bottom ${showComments}`}>
             { comments && comments.map( comment =>(
                 <div key={comment._id}>
-                    <div className="comment-owner" onClick={()=>{navigate(`${comment.owner.username}`)}}>
+                    <div className="comment-owner" onClick={()=>{navigate(`/${comment.owner.username}`)}}>
                     <div className="user-icon">{ comment.owner && comment.owner.image ? <img src={`${comment.owner.image}`} ></img> : <img src="/default-avatar.png"></img> } </div>
                     <div className="comment-data">
                         <div onClick={()=>{navigate(`${comment.owner.username}`)}} className='name'>{comment.owner.first_name} {comment.owner.last_name}</div>

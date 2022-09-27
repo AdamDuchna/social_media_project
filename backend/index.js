@@ -17,11 +17,13 @@ const user = require('./routes/user');
 const posts = require('./routes/posts');
 const profile = require('./routes/profile');
 const comments = require('./routes/comments');
+const friends = require('./routes/friends');
 
 app.use('/posts',posts)
 app.use('/user', user);
 app.use('/profile', profile)
 app.use('/comments', comments)
+app.use('/friends',friends)
 
 
 app.listen(PORT, () => {

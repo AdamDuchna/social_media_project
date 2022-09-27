@@ -41,7 +41,7 @@ const PostForm = ({user}) => {
         </>
         : 
         <div className='post-form-full-view'>
-            <div className='close-button' onClick={()=>{setStatus(!status)}}>X</div>
+            <img src="/arrow.png" className="close-button" onClick={()=>{setStatus(!status)}}></img> 
             <div className='user-info-box'>
                 <div className="user-icon">{ user && user.image ? <img src={user.image}></img> : <img className="user-icon" src="/default-avatar.png"></img> }</div>
                 <div className='user-fullname'>{ user ? <>{user.first_name} {user.last_name}</> : "User Missing"}</div>

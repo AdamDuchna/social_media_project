@@ -1,0 +1,169 @@
+.friends{
+    min-height: 100vh;
+    .arrow{
+        width: 30px;
+        border-radius: 100%;
+    }
+    .arrow:hover{
+        background-color: rgba(128, 128, 128, 0.162);
+    }
+    .profile-content{
+        width: 90%;
+    }
+    .profile{
+        margin-top: 0px;
+        width: 80%;
+    }
+    .friends-buttons{
+        animation: sideslide2 2.2s ease-in-out;
+        padding-left: 12px;
+        position: sticky;
+        top: 50px;
+        width: 20%;
+        display: flex;
+        flex-direction: column;
+        font-weight: 500;
+        height: calc( 100vh - 50px);
+        color: rgb(23, 4, 86);
+        box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+        background-color: rgb(248, 248, 248);
+        .friends-menu{
+            display: flex;
+            align-items: center;
+            padding: 0px;
+            div{
+                padding: 4px;
+                cursor: pointer;
+                width: fit-content;
+            }
+            .main{
+                font-weight: 400;
+                font-size: small;
+            }
+        }
+        .friends-menu:hover, .friends-menu:hover > div{background: none;}
+         > div, .friend{
+            padding: 16px;
+            width:85%;
+            cursor: pointer;
+            border-radius: 12px;
+            padding-left: 24px;
+        }
+        > div:hover{
+            background-color: rgba(167, 167, 167, 0.404);
+        }
+        .title{
+            font-weight: 600;
+            font-size: larger;
+            padding-left: 12px;
+            display: flex;
+        }
+        .title:hover{
+            background: none;
+        }
+        .friend{
+            display: flex;
+            align-items: center;
+            padding: 4px;
+            .user-icon{
+                margin: 8px;
+                border-radius: 100%;
+                width: 40px;
+                height: 40px;
+                position: relative;
+                overflow: hidden;
+            }
+            .user-icon img {
+                display: inline;
+                margin: 0 auto;
+                height: auto;
+                width: 100%;
+            }
+        }
+    }
+    @keyframes sideslide2 {
+        0% { left: -1000px; position: relative; display: none; top:0px;}
+        50%{ left: -1000px; position: relative; display: none; top:0px;}
+        90%{ left: 0px; position: relative; top:0px; padding-left: 24px;}
+        100%{ left: -12px; position: relative; top:0px; padding-left: 24px;}
+    }
+
+    .friends-wrapper{
+        display: flex;
+        .friends-data{
+            margin: 20px;
+            font-weight: 500;
+            font-size: larger;
+            color: rgb(23, 4, 86);
+            width: 75%;
+            .title{
+                animation: slidedown3 3s ease-in-out;
+            }
+        }
+        .requests{
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+        .request{
+            animation: rightslide2 4.2s ease-in-out;
+            animation-fill-mode: forwards;
+            opacity: 0%;
+            border-radius: 12px;
+            margin-top: 12px;
+            margin-right: 24px;
+            box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+            background-color: rgb(248, 248, 248);
+            text-align: center;
+            font-size: medium;
+
+            .request-detail{
+                padding-top: 6px;
+                padding-bottom: 6px;
+                .confirm-button,.remove-button{
+                    margin: 4px 12px 4px 12px;
+                    padding: 6px;
+                    border-radius: 8px;
+                    cursor: pointer;
+                }
+                .confirm-button{
+                    background-color: #3333cc;
+                    color: white;
+                }
+                .remove-button{
+                    background-color: rgba(128, 128, 128, 0.151);
+                }
+            }
+            .user-icon{
+                border-top-left-radius: 12px;
+                border-top-right-radius: 12px;
+                width: 250px;
+                height: 250px;
+                position: relative;
+                overflow: hidden;
+            }
+            .user-icon img {
+                display: inline;
+                margin: 0 auto;
+                height: auto;
+                width: 100%;
+            }
+        }
+
+    }
+}
+
+
+@keyframes rightslide2 {
+    0% { right: -100%; position: relative; opacity: 0%;}
+    60%{ right: -100%; position: relative; opacity: 0%;}
+    90%{ right: 4px; position: relative;}
+    100%{ right: 0px; position: relative; opacity: 100%;}
+}
+
+@keyframes slidedown3 {
+    0% { top: -100%; position: relative; opacity: 0%;}
+    60%{ top: -100%; position: relative; opacity: 0%;}
+    90%{ top: 4px; position: relative;}
+    100%{ top: 0px; position: relative; opacity: 100%;}
+}

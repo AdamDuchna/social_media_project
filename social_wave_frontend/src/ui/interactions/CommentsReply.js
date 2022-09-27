@@ -39,7 +39,7 @@ const CommentsReply = ({replacePost,comments, comment_id, post_id, user}) => {
                 </div>
             ))}
             <div className="comment-input" >
-                <div className="user-icon">{ user && user.image ? <img src={user.image} onClick={()=>{navigate(`${user.username}`)}}></img> : <img  src="/default-avatar.png" onClick={()=>{navigate(`${user.username}`)}}></img> }</div>
+                <div className="user-icon">{ user && user.image ? <img src={user.image} onClick={()=>{navigate(`/${user.username}`)}}></img> : <img  src="/default-avatar.png" onClick={()=>{navigate(`${user.username}`)}}></img> }</div>
                 <TextareaAutosize value={comment} onKeyDown={handleEnter} placeholder="Reply to a comment..."
                 spellCheck="false" required maxRows="20" minRows="1" onChange={e=>setComment(e.target.value)} />
             </div>

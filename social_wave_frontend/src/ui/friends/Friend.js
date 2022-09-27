@@ -1,13 +1,11 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 import PostList from "../posts/PostList";
 import axios from "axios";
 import { ref, uploadBytes, getDownloadURL} from "firebase/storage";
 import { storage } from '../../firebase';
 import {v4} from "uuid";
-import Navbar from "../main_page/Navbar";
-import ProfileInfo from "./ProfileInfo";
-import ProfileDetails from "./ProfileDetails";
+import ProfileInfo from "../profile/ProfileInfo";
+import ProfileDetails from "../profile/ProfileDetails";
 import '../../styling/main_page/navbar/Navbar.css';
 import '../../styling/profile/Profile.css';
 import '../../styling/profile/ProfileInfo.css';
@@ -15,14 +13,12 @@ import '../../styling/profile/ProfileDetails.css';
 import '../../styling/posts/PostForm.css';
 import PostForm from "../posts/PostForm";
 
-const Profile = ({user, setUser}) => {
-    const { username } = useParams();
+const Friend = ({person, user, setUser}) => {
     const [profile,setProfile] = useState();
     const [profilePosts, setProfilePosts] = useState()
-
     const getProfile= ()=>{
         axios
-        .post('http://localhost:5000/profile/find',{username: username})
+        .post('http://localhost:5000/profile/find',{username: person})
         .then(res=>{setProfile(res.data.user); setProfilePosts(res.data.posts)})
         .catch(err=>console.log(err))
     }
@@ -43,25 +39,24 @@ const Profile = ({user, setUser}) => {
         .then(res=>{setProfile(res.data.user); setProfilePosts(res.data.posts)})
         .catch(err=>{console.log(err)})
     }
-    useEffect(()=>{window.scrollTo(0,0); getProfile()},[username])
-    console.log(profile)
+    useEffect(()=>{window.scrollTo(0,0); getProfile()},[person])
     return (
         <>
-        <div className="nav-wrapper"><Navbar setUser={setUser} /></div>
-        <div className="profile">
+        { profile ? <div className="profile">
             <div className="profile-content">
                 <ProfileInfo profile={profile} setProfile={setProfile} uploadFile={uploadFile} user={user} setUser={setUser}/>
                 <ProfileDetails profile={profile} profilePosts={profilePosts} />
                 <div className="owner-posts">
-                    { user && profile && user._id === profile._id && <PostForm user={user}></PostForm> }
+                    { user._id === profile._id && <PostForm user={user}></PostForm> }
                     <PostList posts={profilePosts} 
                     user={user} getPosts={getProfile} 
                     replacePost={replacePost}></PostList>
                 </div>
             </div>
-        </div>
+        </div> :
+        <></>}
         </>
     )
 }
 
-export default Profile;
+export default Friend;

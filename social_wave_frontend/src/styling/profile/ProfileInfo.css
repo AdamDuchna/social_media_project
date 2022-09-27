@@ -69,6 +69,10 @@
   height: calc(25vw + 110px);
   width: 100%;
 }
+.user-info-wrapper .background-placeholder {
+  background: linear-gradient(60deg, #00cc99 0%, #3333cc 80%);
+  height: 100%;
+}
 .user-info-wrapper .user-background {
   height: 24.5vw;
   width: 100%;
