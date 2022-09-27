@@ -12,7 +12,7 @@ import Profile from './ui/profile/Profile';
 import './styling/App.css';
 import Cookies from "js-cookie"
 import Friends from './ui/friends/Friends';
-
+import Videos from './ui/videos/Videos';
 function App() {
   const [user,setUser] = useState()
   const [posts,setPosts] = useState()
@@ -29,6 +29,7 @@ function App() {
             <Routes>
               <Route path='/login' element={<LoginScreen setUser={setUser} setPosts={setPosts} />}></Route>
               <Route path='/' element={<MainPage posts={posts} setPosts={setPosts} user={user} setUser={setUser} Component={Posts}/>}></Route>
+              <Route path='/videos' element={<MainPage posts={posts} setPosts={setPosts} user={user} setUser={setUser} Component={Videos}/>}></Route>
               <Route exact path='/friends' element={<Friends setUser={setUser} user={user}/>}></Route>
               <Route exact path="/:username" element={<Profile user={user} setUser={setUser}/>}></Route>
             </Routes>

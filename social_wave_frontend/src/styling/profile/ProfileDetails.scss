@@ -1,7 +1,6 @@
 .user-data{
     width: calc(40% + 20px);
     margin-right: 20px;
-    height: 2000px;
 }
 .photos-list{
     display: flex;
@@ -83,3 +82,6 @@
 #inputTag,#inputTag2{
     display: none;
  }
+
+ .post-form{ animation: none;}
+ .post-wrapper{ animation: none;}

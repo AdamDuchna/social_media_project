@@ -1,0 +1,100 @@
+.video-form{
+    display: flex;
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    transition: 1.6s linear;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    .user-icon{
+      margin-right: 8px;
+      width: 36px;
+      height: 36px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 100%;
+    }
+    textarea{
+        font-weight: 500;
+        color: rgb(23, 4, 86);
+        resize: none;
+        font-size: 18px;
+        margin-bottom: 6px;
+        border: none;
+        outline: none;
+        width: 100%;
+        font-family: 'Segoe UI';
+      }
+    .user-icon img {
+        display: inline;
+        margin: 0 auto;
+        height: auto;
+        width: 100%;
+    }
+    .user-info-box{
+        color: rgb(23, 4, 86);
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+    .post-image{
+      margin-top: -20px;
+      margin-bottom: 10px;
+      border-radius: 10px;
+    }
+    .post-form-view{
+        background-color: rgb(247, 247, 247);
+        border: none;
+        width: 96%;
+        text-align: left;
+        padding-left:12px;
+        border-radius: 24px;
+        color: rgb(119, 119, 119);
+        font-size: 16px;
+        padding: 10px;
+        padding-left: 16px;
+        cursor: pointer;
+    }
+    #inputTag {display: none; }
+    .upload{
+      height: 32px;
+      width: 32px;
+      cursor: pointer;
+    }
+      .upload-post-box{
+        margin-top: 6px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .post-button{
+            width: 40%;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor:not-allowed;
+          }
+        .post-button.true{
+          background: #3333cc;
+          color: white;
+          cursor: pointer;
+        }
+      }
+      video{
+        margin-bottom: 6px;
+      }
+}
+.close-button {
+    position: relative;
+    cursor: pointer;
+    width: 24px;
+}
+
+.video-form-full-view{
+    animation: grow 1.6s ease-in-out;
+    position: relative;
+    @keyframes grow {
+      0% { max-height: 0px; overflow: hidden;}
+      100%{ max-height: 1000px; overflow: hidden;}
+  }
+}
